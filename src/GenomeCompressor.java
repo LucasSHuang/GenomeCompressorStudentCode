@@ -23,10 +23,27 @@ public class GenomeCompressor {
      * Reads a sequence of 8-bit extended ASCII characters over the alphabet
      * { A, C, T, G } from standard input; compresses and writes the results to standard output.
      */
+
+    public static final int BITS_PER_CHAR = 2;
     public static void compress() {
 
-        // TODO: complete the compress() method
+        // Created a map to keep track of values for all 4 DNA chars
+        short[] map = new short[25];
+        map[0] = 0b00;
+        map['C' - 'A'] = 0b01;
+        map['G' - 'A'] = 0b10;
+        map['T' - 'A'] = 0b11;
 
+        String s = BinaryStdIn.readString();
+        int n = s.length();
+        // Write out the length of the string for expansion
+        BinaryStdOut.write(n);
+
+        for (int i = 0; i < n; i++) {
+            char c = s.charAt(i);
+            // Compress into binary value
+            BinaryStdOut.write(map[c - 'A'], BITS_PER_CHAR);
+        }
         BinaryStdOut.close();
     }
 
@@ -35,8 +52,20 @@ public class GenomeCompressor {
      */
     public static void expand() {
 
-        // TODO: complete the expand() method
+        // Map to keep track of char value at binary value
+        char[] map = new char[4];
+        map[0b00] = 'A';
+        map[0b01] = 'C';
+        map[0b10] = 'G';
+        map[0b11] = 'T';
 
+        // Gets length of string to know how long to go
+        int n = BinaryStdIn.readInt();
+        for (int i = 0; i < n; i++) {
+            // Expand back into DNA
+            int result = BinaryStdIn.readInt(BITS_PER_CHAR);
+            BinaryStdOut.write(map[result]);
+        }
         BinaryStdOut.close();
     }
 

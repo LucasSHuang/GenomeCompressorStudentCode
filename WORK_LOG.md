@@ -1,9 +1,9 @@
-Name: YOUR NAME HERE
+Name: Lucas Huang
 
-| Date    |  Time  |                                     Update |
-|:--------|:------:|-------------------------------------------:|
-| April 5 | 9-10pm | I tried to write abstract, efficient code. |
-|         |        |                                            |
+| Date    |    Time     |                                                                                                                                                                                                                                                                                                                                                                                        Update |
+|:--------|:-----------:|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|
+| April 5 |   9-10pm    |                                                                                                                                                                                                                                                                                                                                                    I tried to write abstract, efficient code. |
+| Nov 18  | 7:30-8:15pm | I completed the problem set. One of the problems I had during the problem set was that after I thought I finished there was an error were pretty much everthing in the result was all 'A'. I realized that this was because I didn't specify how many bits that the code should compress into for the binary so it was just becoming 32 bits instead of 2. I changed that and then it worked. |
 
 
 To add a new row to the table, click into a cell and then hit shift-enter.
